@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna Organics – Demo do Chat Widget</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9f7fc; color: #334155; }
+    .hero { background: linear-gradient(135deg, #0e2824 0%, #1a3d35 100%); padding: 80px 24px; text-align: center; }
+    .hero h1 { color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; }
+    .hero h1 span { color: #4ade80; }
+    .hero p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
+    .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .badge { background: rgba(255,255,255,0.1); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; }
+    .badge.green { background: rgba(74,222,128,0.2); color: #4ade80; }
+    .cta-btn { display: inline-block; background: #349588; color: white; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; margin: 8px; transition: transform 0.15s; }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .section { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+    .section h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 32px; color: #0e2824; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .feature-card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; }
+    .feature-card .icon { font-size: 28px; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: #1a3d35; }
+    .feature-card p { color: #64748b; font-size: 14px; line-height: 1.5; }
+    .install { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .install h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #1a3d35; }
+    pre { background: #0e2824; color: #4ade80; padding: 20px; border-radius: 12px; overflow-x: auto; font-size: 13px; line-height: 1.6; margin-bottom: 16px; }
+    .step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+    .step-num { width: 32px; height: 32px; background: #349588; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+    .step-content h4 { font-weight: 600; margin-bottom: 4px; color: #1a3d35; }
+    .step-content p { color: #64748b; font-size: 14px; }
+    .demo-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; color: #166534; font-size: 14px; }
+    footer { background: #0e2824; color: rgba(255,255,255,0.6); text-align: center; padding: 32px; font-size: 14px; }
+    footer strong { color: #4ade80; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>🌿 Luna Organics<br><span>Chat Widget</span></h1>
+    <p>Chat estilo WhatsApp com inteligência RAG para capturar e qualificar leads na sua landing page de CBD.</p>
+    <div class="badges">
+      <span class="badge green">✅ ANVISA Regulamentado</span>
+      <span class="badge green">✅ CFM Autorizado</span>
+      <span class="badge">100% Online</span>
+      <span class="badge">RAG Integrado</span>
+    </div>
+    <button class="cta-btn" onclick="document.getElementById('lbtn').click()">💬 Testar o Chat Agora</button>
+  </div>
+
+  <!-- FUNCIONALIDADES -->
+  <div class="section">
+    <h2>✨ Funcionalidades do Widget</h2>
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">🧠</div>
+        <h3>RAG Integrado</h3>
+        <p>Responde automaticamente sobre CBD, condições, legalidade, entrega, preços e muito mais com base no conhecimento da Luna Organics.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎯</div>
+        <h3>Qualificação de Lead</h3>
+        <p>Fluxo conversacional que coleta nome, condição de saúde e WhatsApp antes de redirecionar para um especialista.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📲</div>
+        <h3>Redirecionamento WhatsApp</h3>
+        <p>Leads qualificados são direcionados ao WhatsApp da Luna Organics com mensagem pré-preenchida automaticamente.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h3>Quick Replies</h3>
+        <p>Botões de resposta rápida para condições de saúde, facilitando a interação e aumentando a conversão.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📊</div>
+        <h3>Evento para CRM</h3>
+        <p>Dispara evento JavaScript customizado <code>luna:lead_qualified</code> para integração com qualquer CRM ou analytics.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎨</div>
+        <h3>Design da Marca</h3>
+        <p>Visual alinhado à identidade da Luna Organics com verde teal #349588, indicador online e animações suaves.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTALAÇÃO -->
+  <div class="section">
+    <h2>🚀 Como Instalar na Landing Page</h2>
+    <div class="install">
+      <div class="demo-note">
+        💡 <strong>Demonstração ativa:</strong> O chat já está funcionando nesta página. Clique no botão verde no canto inferior direito para testar!
+      </div>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Abra o arquivo chat-widget.js</h4>
+          <p>Edite a linha com <code>WHATSAPP_NUMBER</code> e coloque o número real da Luna Organics.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Configure o número do WhatsApp</h4>
+          <pre>var WHATSAPP_NUMBER = '5511999999999'; // Número real aqui</pre>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Adicione o script na landing page</h4>
+          <p>Cole antes do <code>&lt;/body&gt;</code> no HTML da sua landing:</p>
+          <pre>&lt;script src="chat-widget.js"&gt;&lt;/script&gt;</pre>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Opcional: Integrar com CRM</h4>
+          <pre>document.addEventListener('luna:lead_qualified', function(e) {
+  // e.detail = { name, whatsapp, condition, qualified }
+  fetch('/api/leads', { method: 'POST', body: JSON.stringify(e.detail) });
+});</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Desenvolvido para <strong>Luna Organics</strong> · 2026 · Todos os direitos reservados</p>
+    <p style="margin-top:8px;font-size:12px;">Repositório: <a href="https://github.com/FelipeMozena/luna-organics-chat" style="color:#4ade80;">github.com/FelipeMozena/luna-organics-chat</a></p>
+  </footer>
+
+  <!-- CHAT WIDGET -->
+  <script src="chat-widget.js"></script>
+
+</body>
+</html>
